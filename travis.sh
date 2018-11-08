@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-git fetch --unshallow
+git fetch
 
 npm run test
 npm run test-with-coverage
