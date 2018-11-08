@@ -1,0 +1,19 @@
+# IntelliJ IDEA
+*.iws
+*.iml
+*.ipr
+.idea
+
+# Eclipse
+.classpath
+.project
+.settings
+
+node_modules
+output
+nano.save
+npm-debug.log
+
+e2e-test
+
+.sonar

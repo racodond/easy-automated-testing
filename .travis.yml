@@ -1,0 +1,24 @@
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "racodond"
+
+env:
+  global:
+  - secure: "fcQ0jJuCgCi79X69qotQKihZCNXf0KuPvePKyvFdP7T2DlTXY9IdMlc0eqgegH1t4vcF7REYKZew270veyGRtQjcSnQuTV/FkviK2wryRNCXYlgbRCozOubbsLAC30Xgnb0Nb6Hdnjyut1e8XueJOpH3BLQ6efu1EQYDBUxlLOZlr7RXqQLu0tbF9rhVkWn0S0lvNy3V5Td+SYT1tHwW3sh+ZZC1lvUjJ3TCqKUoG4OwRUDi+K0xe2RtmzUGVToQgYgvrbYPDfkl4fk+hnnEjpFNV/WUeYsFNRuyUc47Tip5hhIBYNngmqwAO8Fq3K3f7bR/429uuCwl1sFsL6UNZ9DmcetutCR7k9m6jxh3P+xZPqOxgWg296D8Aye+2q9K1+jjex3q+yZ6bcBEVAcAHXrx4V1mgmwyoQBCzu3HatjSktK+yb16xWSLQ2ilASRAv/QGX5FRDTq8LYuKUa7i5Sq0Q1AZwMSdNYSjRdblCZhFqdPh9QLb094VxVtDO8LNV0Oawi29qugEEP5otitqvK8KWIBF1TMHyrr9arfpCLraKgWsscEbNW0LRmMDso8AgeOVl8iE5LI14PbqUXQgwNwKn3JodmCw4MAy5phjRuGYQuI0A7iEMUR8QQ0z/XA5zMWamLSWF0K9bbDjCeuzkRxNCTWqv0DZ8HAvAI0RytI="
+  - secure: "MBFM0gFzdIH8n0nIDVjelSSynII620AAFePSinC9/To6VMUqXOT86dXSzi5YcFZMqO/DrmdW7qAjKTMfeAX4V141d6hRmMu1KfKzcZ7CiwfmNKG54yEGLtKvn79VAJDpC859/S/rWhdMReG8NliTIZHawhD6uVpoqEz7CoLUYJi4DufdUb61kZfdFGWNcVESv3bT6H/MaUMxLO4nVgYCY5cHmQw1lpJEcYlLvUBnk88ANdSQEvI33e9p2hYfb+mTjC/C9EvG6fQHXrwxY8dKIX9bBSVIrvuhv2YsbH18h01rvc2IXrbEPMJejj1SE7EkGxpvelGSqsl/3QrZRqfpg9pTSBm3zR5io58vMMy6UtcHGpmxS0DnQui99PCqpRF42BN9lTBIEbDv56z53dc6CElCgGhvi7eB6oyWSS/ZlIwcMFO6xoH2jbRWglg70+S1jlUNIvpK4iAnKP4cELiC60NdcMjMDBmm/aDf7jSCuAZDRrU91zMCRb0s5K0Xtj/Xd8iDR/+6N52Do0hARd88dsKNRu+A91hWqp95OAgbMReLvKB4eq5/qAtNsXX0/tG65n/o2tibzXVa3yMTaHxU9hDsrPJvxcekfI96ZRkXxhsXpNd942AJpzt4uVWyvKolN1QDBAMpbkYp8GqH+MvCMM+Hh8eQfKc5BaBvvspP7DE="
+
+language: node_js
+node_js:
+  - '8'
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+    - "$HOME/.sonar/cache"
+
+script: "./travis.sh"

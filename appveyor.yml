@@ -1,0 +1,21 @@
+version: "{build}"
+
+environment:
+  nodejs_version: 8
+
+platform:
+  - x86
+  - x64
+
+install:
+ - ps: Install-Product node $env:nodejs_version
+ - node --version
+ - npm --version
+ - npm install
+
+test_script:
+  - npm run test
+  - npm run test-with-coverage
+  - npm run doc
+
+build: off
