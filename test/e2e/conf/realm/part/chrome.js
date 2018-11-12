@@ -16,4 +16,24 @@ module.exports = {
       },
     },
   ],
+
+  // seleniumInstallArgs: {
+  //   proxy: 'http://localhost:3128',
+  //   drivers: {
+  //     chrome: {
+  //       version: '2.43',
+  //       arch: process.arch,
+  //       baseURL: 'https://chromedriver.storage.googleapis.com',
+  //     },
+  //   },
+  // },
+  // seleniumArgs: {
+  //   drivers: {
+  //     chrome: {
+  //       version: '2.43',
+  //       arch: process.arch,
+  //     },
+  //   },
+  // },
+
 };

@@ -49,6 +49,30 @@ const config = {
 
   // seleniumInstallArgs: {
   //   proxy: 'http://localhost:3128',
+  //   drivers: {
+  //     chrome: {
+  //       version: '2.43',
+  //       arch: process.arch,
+  //       baseURL: 'https://chromedriver.storage.googleapis.com',
+  //     },
+  //     firefox: {
+  //       version: '0.23.0',
+  //       arch: process.arch,
+  //       baseURL: 'https://github.com/mozilla/geckodriver/releases/download',
+  //     },
+  //   },
+  // },
+  // seleniumArgs: {
+  //   drivers: {
+  //     chrome: {
+  //       version: '2.43',
+  //       arch: process.arch,
+  //     },
+  //     firefox: {
+  //       version: '0.23.0',
+  //       arch: process.arch,
+  //     },
+  //   },
   // },
 
 };

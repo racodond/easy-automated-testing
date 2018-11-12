@@ -12,8 +12,11 @@
 ## Building and Testing
 * To retrieve dependencies: `npm install --no-optional`
 * To run unit tests: `npm run test`
-* To run end-to-end tests: `npm run e2e-test`. If you are behind a proxy, uncomment (and update if necessary) line `seleniumInstallArgs: { // proxy: 'http://localhost:3128'`, in `lib/conf/wdio.conf.js`.
-* To run end-to-end tests in Docker containers: `npm run e2e-test-docker`. If you are behind a proxy, run `npm run e2e-test-docker -- --proxyPort=XXXX` instead.
+* To run end-to-end tests: `npm run e2e-test`.
+  * If you are behind a proxy, uncomment (and update if necessary) line `seleniumInstallArgs: { // proxy: 'http://localhost:3128'` in `test/e2e/conf/realm/part/chrome.js` and `test/e2e/conf/realm/part/firefox.js`.
+  * Depending on the versions of Chrome and Firefox installed on your computer, you might need to update chromedriver version in `test/e2e/conf/realm/part/chrome.js` and gheckodriver version in `test/e2e/conf/realm/part/firefox.js`.
+* To run end-to-end tests in Docker containers: `npm run e2e-test-docker`.
+  * If you are behind a proxy, run `npm run e2e-test-docker -- --proxyPort=XXXX` instead.
 
 
 ## Publishing a new version of the npm package
