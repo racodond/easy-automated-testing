@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-git fetch
-
 npm run test
 npm run test-with-coverage
 npm run doc
