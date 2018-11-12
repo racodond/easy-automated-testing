@@ -27,21 +27,21 @@ Requirements:
 
 From your IDE:
 
-2. Checkout a clean `master` branch
-3. Update the package version by running the following command replacing `<type>` with either `major`, `minor` or `patch`: 
+1. Checkout a clean `master` branch
+2. Update the package version by running the following command replacing `<type>` with either `major`, `minor` or `patch`: 
 ```
 npm version <type> -m "Release version %s"
 ```
 It upgrades the version in `package.json` and commit the change with "Release version X.X.X" message.
 
-4. Generate the JSDoc by running `npm run doc`
-5. Push the changes in `./docs` to GitHub: `git add docs && git commit -m "Generate documentation for version 2.5.0" && git push origin master`
-6. Publish a new release of the npm package by running `npm publish`
+3. Generate the JSDoc by running `npm run doc`
+4. Push the changes in `./docs` to GitHub: `git add docs && git commit -m "Generate documentation for version 2.5.0" && git push origin master`
+5. Publish a new release of the npm package by running `npm publish`
 
 From your browser:
 
-7. Close the [milestone](https://github.com/racodond/etaf/milestones)
-8. Publish a new [new release](https://github.com/racodond/etaf/releases/new) on GitHub:
+6. Close the [milestone](https://github.com/racodond/etaf/milestones)
+7. Publish a new [new release](https://github.com/racodond/etaf/releases/new) on GitHub:
  * Tag version: npm package version
  * Release title: short title describing the main change(s)
  * Description: a link to the issues of the milestone (https://github.com/racodond/etaf/milestone/X?closed=1) + any other information that would be relevant
