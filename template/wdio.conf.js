@@ -47,6 +47,11 @@ const config = {
     // },
   ],
 
+  //  services: ['selenium-standalone'],
+  //  host: '0.0.0.0',
+  //  port: '4444',
+  //  path: '/wd/hub',
+
   // seleniumInstallArgs: {
   //   proxy: 'http://localhost:3128',
   //   drivers: {
