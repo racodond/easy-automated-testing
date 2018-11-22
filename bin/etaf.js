@@ -7,6 +7,7 @@ const gulpDel = require('del');
 const gulpMocha = require('gulp-mocha');
 const webdriver = require('gulp-webdriver');
 const yargs = require('yargs');
+const replace = require('replace');
 const wdioOptions = { cucumberOpts: {} };
 let configFile;
 
@@ -76,7 +77,7 @@ const runProject = config => {
  * Create project structure tree.
  * @return {Promise}
  */
-const installProject = async () => {
+const installProject = async(config) => {
   console.log('Creating test project structure...');
 
   const allPromises = [
@@ -104,6 +105,24 @@ const installProject = async () => {
     await fs.move('gitignore', '.gitignore');
     await fs.move('npmrc', '.npmrc');
     console.log('Test project structure successfully created.');
+
+    if (config.sample == 'true') {
+      console.log('Adding project sample...');
+      await fs.copy('node_modules/etaf/sample', '.');
+      replace({
+        regex: "baseUrl: 'http://localhost:8080'",
+        replacement: "baseUrl: 'https://racodond.github.io/test-automation-website/'",
+        paths: ['wdio.conf.js', 'wdio.local.conf.js'],
+        silent: true,
+      });
+      replace({
+        regex: 'dependencies": {',
+        replacement: 'dependencies": {\n    "faker": "4.1.0",',
+        paths: ['package.json'],
+        silent: true,
+      });
+      console.log("Project sample successfully added.")
+    }
   } catch (err) {
     console.error(err);
     process.exit(1);
@@ -119,7 +138,13 @@ yargs
   .command({
     command: 'install',
     desc: 'Create project structure tree',
-    handler: () => installProject(),
+    handler: argv => installProject(argv),
+    builder: yargsObj => {
+      yargsObj.option('sample', {
+        describe: 'To populate the project structure with a sample project.',
+        default: 'false',
+      });
+    },
   })
   .command({
     command: 'generate-local-conf',

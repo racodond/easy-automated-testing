@@ -1,0 +1,23 @@
+version: '3'
+services:
+  chrome:
+    image: selenium/standalone-chrome:3.14.0
+    container_name: chrome
+    environment:
+      - JAVA_OPTS=-Dselenium.LOGGER.level=WARNING
+  firefox:
+    image: selenium/standalone-firefox:3.14.0
+    container_name: firefox
+    environment:
+      - JAVA_OPTS=-Dselenium.LOGGER.level=WARNING
+  sample-project:
+    image: node:8
+    container_name: sample-project
+    command: /data/docker/run-sample-project-docker.sh
+    volumes:
+       - ../.:/data
+    environment:
+      - RUN_AS_UID=${RUN_AS_UID}
+    depends_on:
+      - firefox
+      - chrome
