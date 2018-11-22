@@ -5,7 +5,7 @@ set -euo pipefail
 cd /data
 
 echo "Installing sample project dependencies..."
-npm install
+npm install --no-optional
 echo "Sample project dependencies installed."
 
 echo "Running end-to-end tests on all-docker-chrome realm..."
