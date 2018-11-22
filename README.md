@@ -32,7 +32,7 @@ Note that it requires good development skills as well as good knowledge and unde
 1. Create a new folder <AUTOMATED_TESTS> in your project to host your automated tests.
 2. Create a new NPM project by executing `npm init`. More information about the different options [here](https://docs.npmjs.com/getting-started/using-a-package.json).
 3. Install EAT package by running the following command from <AUTOMATED_TESTS>: `npm install --save etaf`. It creates a `node_modules` directory containing all the dependencies needed to run the project.
-4. From <AUTOMATED_TESTS>, run `npx etaf install` to generate the skeleton of your test project.
+4. From <AUTOMATED_TESTS>, run `npx etaf install` to generate the skeleton of your test project. If you want to generate the skeleton of your project with some working samples, run: `npx etaf install --sample=true` and then run `npm install --no-optional`
 
 ### Behind a Proxy
 Set the configuration of your proxy by editing the `.npmrc` file in your home directory:
