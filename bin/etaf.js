@@ -115,12 +115,6 @@ const installProject = async(config) => {
         paths: ['wdio.conf.js', 'wdio.local.conf.js'],
         silent: true,
       });
-      replace({
-        regex: 'dependencies": {',
-        replacement: 'dependencies": {\n    "faker": "4.1.0",',
-        paths: ['package.json'],
-        silent: true,
-      });
       console.log("Project sample successfully added.")
     }
   } catch (err) {
