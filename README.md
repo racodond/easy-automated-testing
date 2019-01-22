@@ -4,7 +4,6 @@
 
 [![Quality Gate status](https://sonarcloud.io/api/project_badges/measure?project=etaf&metric=alert_status)](https://sonarcloud.io/dashboard?id=etaf)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=etaf&metric=ncloc)](https://sonarcloud.io/dashboard?id=etaf)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=etaf&metric=coverage)](https://sonarcloud.io/dashboard?id=etaf)
 
 # Easy Test Automation Framework (ETAF)
 
