@@ -55,7 +55,7 @@ Note that the local and debug configurations have to be generated first (see Con
 * The local configuration is set in the `wdio.local.conf.js`. This local configuration can be reset by running
 `npx etaf generate-local-conf`.
 * The debug configuration is set in the `wdio.debug.conf.js`. This debug configuration can be reset by running
-`npm etaf generate-local-conf`.
+`npx etaf generate-local-conf`.
 
 ### Parameters
 To pass parameters to the command, add `--`: `npx etaf run --parameter1=value1`
