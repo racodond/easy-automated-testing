@@ -217,42 +217,38 @@ Example:
 
 require('src/support/business-object/user.bo');
 
-const { defineSupportCode } = require('cucumber');
+const { Before, Given, When, Then } = require('cucumber');
 
-defineSupportCode(function ({ Before, Given, When, Then }) {
+let customer = { firstName: 'John', lastName: 'Doe', email: 'john.doe@email.com' };
 
-  let customer = { firstName: 'John', lastName: 'Doe', email: 'john.doe@email.com' };
+Before({ tags: '@data-customer-personal-information-update-name' }, function () {
+customer = { firstName: 'John2', lastName: 'Doe2', email: 'john.doe2@email.com' };
+});
 
-  Before({ tags: '@data-customer-personal-information-update-name' }, function () {
-    customer = { firstName: 'John2', lastName: 'Doe2', email: 'john.doe2@email.com' };
-  });
+Given(/^I am a customer$/, function () {
+return browser
+  .loginAs(customer.email, 'password')
+  .seeCustomer();
+});
 
-  Given(/^I am a customer$/, function () {
-    return browser
-      .loginAs(customer.email, 'password')
-      .seeCustomer();
-  });
-
-  Given(/^I am a visitor$/, function () {
-    return browser
-      .forceLogout()
-      .seeVisitor();
-  });
+Given(/^I am a visitor$/, function () {
+return browser
+  .forceLogout()
+  .seeVisitor();
+});
 
 
-  When(/^I log in from (login page|menu) with valid credentials$/, function (location) {
-    return login(location, { usernameField: 'login@email.com', passwordField: 'password' });
-  });
+When(/^I log in from (login page|menu) with valid credentials$/, function (location) {
+return login(location, { usernameField: 'login@email.com', passwordField: 'password' });
+});
 
-  When(/^I log out$/, function () {
-    return browser.logout();
-  });
+When(/^I log out$/, function () {
+return browser.logout();
+});
 
-  Then(/^I should be a customer$/, function () {
-    return browser.seeCustomer();
-  });
-
-  ...
+Then(/^I should be a customer$/, function () {
+return browser.seeCustomer();
+});
 ```
 
 #### Best practices
