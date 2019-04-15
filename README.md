@@ -20,12 +20,24 @@ It includes:
 This framework is suitable for big solutions that will be covered by an important number of scenarios.
 Note that it requires good development skills as well as good knowledge and understanding of JavaScript.
 
-## Integrating ETAF to Your Project
+## Getting started
 
 ### Prerequisites
 * Install [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org) (latest available 8.X.X version)
 * Install [npx](https://www.npmjs.com/package/npx): `npm install -g npx`
 * Install [Java JRE](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (version 8 or greater)
+
+### Init new project
+* `npm i --save etaf`
+* `npx etaf install --sample=true`
+
+Now you can execute the project sample with `npx etaf run`.
+
+### Init new empty project (without sample)
+* `npm i --save etaf`
+* `npx etaf install`
+
+## Integrating ETAF to Your Project
 
 ### Adding ETAF Package and Configuration to Your Project
 1. Create a new folder <AUTOMATED_TESTS> in your project to host your automated tests.
