@@ -11,7 +11,7 @@ defineSupportCode(function ({ Before, After }) {
   });
 
   After(function (scenario) {
-    if (scenario.status === 'failed') {
+    if (scenario.result.status === 'failed') {
       const errorDate = dateFormat(new Date(), 'yyyy-mm-dd-HHMMss');
       return browser.saveScreenshot(`./output/errorShots/screenshot-error-${errorDate}.png`);
     }
