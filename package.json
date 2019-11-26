@@ -14,7 +14,7 @@
     "url": "https://github.com/racodond/etaf/issues"
   },
   "author": "David RACODON - racodond <david.racodon@gmail.com>",
-  "contributors": ["Nicolas CHEUTIN <nicolas@cheutin.com>"],
+  "contributors": ["Nico CHEUTIN <https://github.com/alcaneo>"],
   "license": "MIT",
   "main": "lib/index.js",
   "bin": {
